@@ -51,7 +51,6 @@ public class StudentService {
         Student student = studentRepository.findById(studentId).orElseThrow(() -> new IllegalStateException(
                 "student with id " + studentId + " was not found"
         ));
-
         if(name != null && !name.isEmpty() && !Objects.equals(student.getName(), name)) {
             student.setName(name);
         }
